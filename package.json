@@ -1,0 +1,85 @@
+{
+  "name": "copilot-token-tracker",
+  "displayName": "Copilot Token Tracker",
+  "description": "Track actual GitHub Copilot token usage by parsing trace logs — real API token counts, cost estimation, ROI tracking, and usage breakdown by model & category",
+  "version": "1.0.0",
+  "publisher": "darrel",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "copilot",
+    "token",
+    "usage",
+    "cost",
+    "tracker",
+    "ROI",
+    "dashboard"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilotTokenTracker.openDashboard",
+        "title": "Open Dashboard",
+        "category": "Copilot Token Tracker"
+      },
+      {
+        "command": "copilotTokenTracker.resetData",
+        "title": "Reset All Data",
+        "category": "Copilot Token Tracker"
+      },
+      {
+        "command": "copilotTokenTracker.enableTraceLogging",
+        "title": "How to Enable Trace Logging",
+        "category": "Copilot Token Tracker"
+      }
+    ],
+    "configuration": {
+      "title": "Copilot Token Tracker",
+      "properties": {
+        "copilotTokenTracker.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable token tracking"
+        },
+        "copilotTokenTracker.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show token count in status bar"
+        },
+        "copilotTokenTracker.defaultModel": {
+          "type": "string",
+          "default": "claude-3-5-sonnet",
+          "description": "Default model for cost estimation when model cannot be detected from logs"
+        },
+        "copilotTokenTracker.monthlySubscriptionCost": {
+          "type": "number",
+          "default": 39,
+          "minimum": 0,
+          "description": "Your monthly GitHub Copilot subscription cost in USD. Used to calculate ROI vs API-equivalent usage cost."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.130",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  }
+}
