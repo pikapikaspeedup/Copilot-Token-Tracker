@@ -1,8 +1,12 @@
 # Copilot Token Tracker
 
+简体中文 | [English](README.en.md)
+
 通过解析 Copilot Chat 的追踪日志，追踪 **真实** 的 GitHub Copilot Token 使用情况，包括实际的 API Token 计数、成本估算、投资回报率（ROI）跟踪以及按模型和类别的使用情况细分。
 
 与通过本地 Tokenizer 估算的插件不同，此扩展直接读取 Copilot API 返回的 `prompt_tokens` / `completion_tokens` 值（支持 OpenAI 和 Anthropic 格式）。
+
+![Dashboard Overview](Overview.jpg)
 
 ## 功能
 
@@ -53,7 +57,7 @@ code --install-extension copilot-token-tracker-1.0.0.vsix
 或从源码构建：
 
 ```bash
-git clone https://github.com/darrel/copilot-token-tracker.git
+git clone https://github.com/pikapikaspeedup/Copilot-Token-Tracker.git
 cd copilot-token-tracker
 npm install
 npm run compile
