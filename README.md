@@ -2,7 +2,7 @@
 
 简体中文 | [English](README.en.md)
 
-玩 AI 来 ![linux.do]linux.do
+玩 AI 来 linux.do
 
 
 通过解析 Copilot Chat 的追踪日志，追踪 **真实** 的 GitHub Copilot Token 使用情况，包括实际的 API Token 计数、成本估算、投资回报率（ROI）跟踪以及按模型和类别的使用情况细分。
